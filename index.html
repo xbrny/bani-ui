@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Debug UI</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  </head>
+  <body class="has-navbar-fixed">
+    <nav class="navbar navbar--fixed">
+      <div class="fluid-container">
+        <input
+          type="checkbox"
+          class="navbar__check"
+          id="navbar-check"
+        />
+        <div class="navbar__brand">
+          <a href="#" class="navbar__item">
+            <img src="logo.png" alt="Some placeholder" width="60" />
+          </a>
+
+          <label for="navbar-check" class="navbar__toggler">
+            <span class="navbar__bar"></span> <span class="navbar__bar"></span>
+            <span class="navbar__bar"></span> <span class="navbar__bar"></span>
+          </label>
+        </div>
+        <div class="navbar__menu">
+          <div class="navbar__start">
+            <a href="#" class="navbar__item">Headers</a>
+            <a href="#" class="navbar__item">Covers</a>
+            <a href="#" class="navbar__item">Features</a>
+            <a href="#" class="navbar__item">Footers</a>
+            <div class="navbar__item navbar__item--has-dropdown">
+              <a class="navbar__link">Others</a>
+              <div class="navbar__dropdown">
+                <a href="#" class="navbar__item">Pricing</a>
+                <a href="#" class="navbar__item">Product</a>
+                <a href="#" class="navbar__item">Support</a>
+              </div>
+            </div>
+          </div>
+          <div class="navbar__end">
+            <a href="#" class="navbar__item">
+              <div class="buttons">
+                <button class="button">Register</button>
+                <button class="button button--clear">Login</button>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="list">
+      <div class="list__container">
+        <a class="list__item" href="#">Headers</a>
+        <a class="list__item" href="#">Covers</a>
+        <a class="list__item" href="#">Features</a>
+        <a class="list__item" href="#">CTA</a>
+        <a class="list__item" href="#">Pricings</a>
+        <a class="list__item" href="#">Teams</a>
+        <a class="list__item" href="#">Testimonials</a>
+        <a class="list__item" href="#">Clients</a>
+        <a class="list__item" href="#">Counter</a>
+        <a class="list__item" href="#">Process</a>
+        <a class="list__item" href="#">Gallery</a>
+        <a class="list__item" href="#">Contacts</a>
+        <a class="list__item" href="#">Footers</a>
+      </div>
+    </nav>
+
+    <div class="section container">
+      <h3 id="headings">Headings</h3>
+
+      <h1>h1. Heading</h1>
+      <h2>h2. Heading</h2>
+      <h3>h3. Heading</h3>
+      <h4>h4. Heading</h4>
+      <h5>h5. Heading</h5>
+      <h6>h6. Heading</h6>
+      <h1 class="display-1">Display 1</h1>
+      <h1 class="display-2">Display 2</h1>
+
+      <hr />
+
+      <h3 id="paragraph">Paragraph</h3>
+
+      <p>
+        Lorem ipsum dolor sit amet,
+        <a href="#" title="test link">test link</a> adipiscing elit. Nullam
+        dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis
+        suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at,
+        tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis
+        luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget
+        metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla
+        nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo
+        vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing
+        elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus.
+        Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi,
+        imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis,
+        massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim
+        diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien
+        fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at,
+        commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+      </p>
+
+      <hr />
+
+      <h3 id="list_types">List Types</h3>
+
+      <h3>Definition List</h3>
+      <dl>
+        <dt>Definition List Title</dt>
+        <dd>This is a definition list division.</dd>
+      </dl>
+
+      <h3>Ordered List</h3>
+      <ol>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+      </ol>
+
+      <h3>Unordered List</h3>
+      <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+      </ul>
+
+      <hr />
+
+      <h3 id="form_elements">Fieldsets and Form Elements</h3>
+
+      <fieldset>
+        <form>
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam
+            dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc
+            iaculis suscipit dui.
+          </p>
+
+          <p>
+            <label for="text_field">Text Field:</label>
+            <input type="text" id="text_field" />
+          </p>
+
+          <p>
+            <label for="text_area">Text Area:</label>
+            <textarea id="text_area"></textarea>
+          </p>
+
+          <p>
+            <label for="select_element">Select Element:</label>
+            <select name="select_element">
+              <optgroup label="Option Group 1">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </optgroup>
+              <optgroup label="Option Group 2">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </optgroup>
+            </select>
+          </p>
+
+          <p>
+            <label for="radio_buttons">Radio Buttons:</label>
+            <label>
+              <input
+                type="radio"
+                class="radio"
+                name="radio_button"
+                value="radio_1"
+              />
+              <span class="checkable">Radio 1</span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                class="radio"
+                name="radio_button"
+                value="radio_2"
+              />
+              <span class="checkable">Radio 2</span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                class="radio"
+                name="radio_button"
+                value="radio_3"
+              />
+              <span class="checkable">Radio 3</span>
+            </label>
+          </p>
+
+          <p>
+            <label for="checkboxes">Checkboxes:</label>
+            <label>
+              <input
+                type="checkbox"
+                class="checkbox"
+                name="checkboxes"
+                value="check_1"
+              />
+              <span class="checkable">Checkbox 1</span>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                class="checkbox"
+                name="checkboxes"
+                value="check_2"
+              />
+              <span class="checkable">Checkbox 2</span>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                class="checkbox"
+                name="checkboxes"
+                value="check_3"
+              />
+              <span class="checkable">Checkbox 3</span>
+            </label>
+          </p>
+
+          <p>
+            <label for="password">Password:</label>
+            <input type="password" class="password" name="password" />
+          </p>
+
+          <p>
+            <label for="file">File Input:</label>
+            <input type="file" class="file" name="file" />
+          </p>
+
+          <p class="buttons">
+            <button class="button button--uppercase">
+              Primary
+              <div class="icon right"><i data-feather="clipboard"></i></div>
+            </button>
+            <button class="button">Primary</button>
+            <button class="button button--outline">Outline</button>
+            <button class="button button--clear">Clear</button>
+            <button class="button button--secondary">Secondary</button>
+            <button class="button button--secondary button--outline">
+              Secondary Outline
+            </button>
+            <button class="button button--secondary button--clear">
+              Secondary Clear
+            </button>
+          </p>
+        </form>
+      </fieldset>
+
+      <hr />
+
+      <h3 id="tables">Tables</h3>
+
+      <table cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <th>Table Header 1</th>
+            <th>Table Header 2</th>
+            <th>Table Header 3</th>
+          </tr>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+          <tr class="even">
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="cards">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    feather.replace();
+  </script>
+</html>

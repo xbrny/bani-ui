@@ -1,0 +1,41 @@
+@import 'abstracts/all'
+
+@import 'base/all'
+
+@import 'components/all'
+
+@import 'layouts/all'
+
+.container
+  +container
+
+.section
+  +section
+
+.display-1
+  font-size: $font-display-1
+
+.display-1
+  font-size: $font-display-2
+
+.list
+  background: $color-primary
+  &__container
+    +container
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+  &__item
+    color: $color-white
+    padding: 0.75rem 1rem
+    &:focus,
+    &:hover
+      color: $color-gray-1
+
+
++desktop
+  .cards
+    +grid-column(4)
+
+  .card:first-child
+    +grid-child(1, 3)

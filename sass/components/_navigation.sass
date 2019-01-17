@@ -1,0 +1,236 @@
+$navbar-height: 3.25rem
+
+$navbar-font-family: $font-primary
+$navbar-font-weight: 600
+$navbar-font-size: 0.8rem
+$navbar-submenu-font-size: $navbar-font-size * 0.9
+$navbar-letter-spacing: .1rem
+$navbar-is-uppercased: true
+
+$navbar-font-color: $color-initial
+$navbar-font-color-hover: darken($color-primary, 15)
+$navbar-background-color: $color-white
+
+$navbar-bar-color: darken($color-gray-3, 30)
+$navbar-bar-height: 2px
+$navbar-bar-width: 25px
+$navbar-bar-space: 10px
+$navbar-menu-border-radius: 10px
+
+$navbar-dropdown-radius: .4rem
+$navbar-dropdown-background-color: $color-white
+$navbar-dropdown-border-color: darken($color-gray-1, 2)
+$navbar-dropdown-shadow-color: $color-gray-3
+$navbar-dropdown-border-radius: 8px
+$navbar-dropdown-width: 300px
+$navbar-dropdown-padding-y: 0.8rem
+$navbar-dropdown-padding-x: 0.8rem
+
+$navbar-caret-color: $color-initial
+$navbar-caret-side: 5px
+$navbar-caret-top: 5px
+
+$navbar-has-shadow: true
+
+$body-offset-top: 5.4rem
+
+.has-navbar-fixed
+  padding-top: $body-offset-top
+
+.navbar
+  width: 100%
+  position: relative
+  min-height: $navbar-height
+  z-index: 30
+  background-color: $navbar-background-color
+  @if $navbar-has-shadow
+    +shadow-md($color-gray-3)
+
+  & > .container
+    +container
+    position: relative
+    z-index: 30
+
+  & > .fluid-container
+    +fluid-container
+    position: relative
+    z-index: 30
+
+  &--fixed
+    position: fixed
+    top: 0
+    background-color: rgba($navbar-background-color, 0.98)
+
+  &__brand
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-shrink: 0
+
+  &__toggler
+    cursor: pointer
+    display: block
+    height: $navbar-height
+    width: $navbar-height
+    position: relative
+    background-color: transparent
+    border-radius: 4px
+    transition: all 250ms ease-in-out
+    &:hover
+      background-color: rgba($color-gray-1, .4)
+    +desktop
+      display: none
+
+  &__bar
+    display: block
+    position: absolute
+    height: $navbar-bar-height
+    width: $navbar-bar-width
+    background-color: $navbar-bar-color
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    transition: all 150ms ease-in-out
+    transform-origin: center
+
+  &__bar:nth-child(2)
+    opacity: 0
+
+  &__bar:nth-child(3)
+    content: ''
+    margin-top: $navbar-bar-space * -1
+
+  &__bar:nth-child(4)
+    content: ''
+    margin-top: $navbar-bar-space
+
+  &__check:checked ~ &__brand &__bar
+    &:nth-child(1)
+      transform: translate(-50%, -50%) rotate(45deg)
+      transition: transform 250ms ease-in-out 100ms
+
+    &:nth-child(2)
+      opacity: 1
+      transform: translate(-50%, -50%) rotate(-45deg)
+      transition: transform 250ms ease-in-out 100ms
+
+    &:nth-child(3), &:nth-child(4)
+      opacity: 0
+      margin-top: 0px
+      transition: opacity 125ms ease-in-out, margin-top 125ms ease-in-out
+
+  &__check
+    display: none !important
+
+  &__menu
+    +touch
+      +shadow-sm($color-gray-3)
+      border: 1px solid #eee
+      border-radius: $navbar-menu-border-radius
+      padding-top: 0.5rem
+      padding-bottom: 0.5rem
+      transform-origin: top
+      transform: scale(1,0)
+      transition: transform 100ms ease-in-out, opacity 100ms ease-in-out
+      opacity: 0
+      position: absolute
+      left: 0.35rem
+      right: 0.35rem
+      background: $navbar-background-color
+
+  &__check:checked ~ &__menu
+    transform: scale(1,1)
+    opacity: 1
+    transition: transform 100ms ease-in-out, opacity 250ms ease-in-out 100ms
+
+  &__item
+    font-family: $navbar-font-family
+    font-weight: $navbar-font-weight
+    font-size: $navbar-font-size
+    letter-spacing: $navbar-letter-spacing
+    color: $navbar-font-color
+    padding: 0.75rem 1rem
+    display: flex
+    align-items: center
+    @if $navbar-is-uppercased
+      text-transform: uppercase
+
+    &:hover
+      color: $navbar-font-color-hover
+
+    &--has-dropdown
+      flex-direction: column
+      align-items: flex-start
+
+    &--has-dropdown &__item
+      font-size: $navbar-submenu-font-size
+      padding-top: 0.6rem
+      padding-bottom: 0.3rem
+
+  &__brand > &__item:first-child
+    padding-left: 0
+
+  &__link
+    cursor: pointer
+    color: $navbar-font-color
+    width: 100%
+    &:hover
+      color: $navbar-font-color-hover
+
+  +desktop
+    &, &__menu, &__start, &__end, & > .container, & > .fluid-container
+      display: flex
+      align-items: center
+
+    &__menu
+      width: 100%
+
+    &__start
+      margin-right: auto
+
+    &__end
+      margin-left: auto
+
+    &__end > &__item:last-child
+      padding-right: 0
+
+    &__dropdown
+      display: flex
+      position: absolute
+      flex-direction: column
+      top: 100%
+      background-color: $navbar-dropdown-background-color
+      border: 1px solid $navbar-dropdown-border-color
+      border-radius: $navbar-dropdown-border-radius
+      width: $navbar-dropdown-width
+      padding-top: $navbar-dropdown-padding-y
+      padding-bottom: $navbar-dropdown-padding-y
+      padding-left: $navbar-dropdown-padding-x
+      padding-right: $navbar-dropdown-padding-x
+      transition: all 100ms ease-in-out 50ms
+      +shadow-sm($navbar-dropdown-shadow-color)
+      opacity: 0
+
+    &__item
+      position: relative
+      overflow: hidden
+      &:hover
+        overflow: visible
+
+    &__item:hover &__dropdown
+      opacity: 1
+
+    &__link
+      display: flex
+      align-items: center
+
+    &__link::after
+      content: ''
+      display: inline-block
+      margin-top: -1px
+      height: 0px
+      width: 0px
+      margin-left: 6px
+      border-left: $navbar-caret-side solid transparent
+      border-right: $navbar-caret-side solid transparent
+      border-top: $navbar-caret-top solid $navbar-caret-color

@@ -1,0 +1,167 @@
+$button-font-family: $font-primary
+$button-font-weight: bold
+$button-font-size: 1rem
+$button-height: 2.5rem
+$button-gradient: linear-gradient( 45deg, $color-primary, $color-tertiary);
+$button-background-color: $color-primary
+$button-background-color-hover: darken($color-primary, 5)
+$button-font-color: $color-white
+$button-radius: .4rem
+$button-padding-y: 1.4rem
+$button-padding-x: 0
+$button-letter-spacing: .1rem
+$button-is-uppercased: true
+
+$button-secondary-background-color: $color-secondary
+$button-secondary-background-color-hover: darken($color-secondary, 5)
+$button-secondary-font-color: $color-white
+
+.button
+	+shadow-sm($button-background-color)
+	background-color: $button-background-color
+	color: $button-font-color
+	border: .1rem solid $button-background-color
+	font-family: $button-font-family
+	border-radius: $button-radius
+	cursor: pointer
+	display: inline-block
+	font-size: $button-font-size
+	font-weight: $button-font-weight
+	height: $button-height
+	letter-spacing: $button-letter-spacing
+	padding-left: $button-padding-y
+	padding-right: $button-padding-y
+	padding-top: $button-padding-x
+	padding-bottom: $button-padding-x
+	text-align: center
+	text-decoration: none
+	white-space: nowrap
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	transition: all 150ms ease-in-out
+	@if $button-is-uppercased
+		text-transform: uppercase
+		font-size: $button-font-size * 0.8
+
+	&--uppercase
+		text-transform: uppercase
+		font-size: $button-font-size * 0.8
+
+	&:hover
+		+shadow-md($button-background-color)
+		background-color: $button-background-color-hover
+		border-color: $button-background-color-hover
+		color: $button-font-color
+
+	&:focus
+		box-shadow: 0 0 0 0.15rem rgba($button-background-color,0.25)
+
+	&[disabled]
+		cursor: default
+		opacity: .5
+		&:focus,
+		&:hover
+			background-color: $button-background-color
+			border-color: $button-background-color
+
+	&--outline
+		background-color: transparent
+		color: $button-background-color
+		box-shadow: none
+
+		&:focus,
+		&:hover
+			background-color: transparent
+			border-color: $button-background-color-hover
+			color: $button-background-color-hover
+			box-shadow: none
+
+		&[disabled]
+
+			&:focus,
+			&:hover
+				border-color: inherit
+				color: $button-background-color
+
+	&--clear
+		background-color: transparent
+		border-color: transparent
+		color: $button-background-color
+
+		&:focus,
+		&:hover
+			background-color: transparent
+			border-color: transparent
+			color: $button-background-color-hover
+
+		&[disabled]
+			&:focus,
+			&:hover
+				color: $button-background-color
+
+	&--secondary
+		+shadow-sm($button-secondary-background-color)
+		background-color: $button-secondary-background-color
+		border-color: $button-secondary-background-color
+		color: $button-secondary-font-color
+
+		&:focus,
+		&:hover
+			+shadow-md($button-secondary-background-color)
+			background-color: $button-secondary-background-color-hover
+			border-color: $button-secondary-background-color-hover
+
+		&[disabled]
+			&:focus,
+			&:hover
+				color: $button-secondary-background-color
+
+		&.button--outline
+			background-color: transparent
+			color: $button-secondary-background-color
+			border-color: $button-secondary-background-color
+			box-shadow: none
+
+			&:focus,
+			&:hover
+				background-color: transparent
+				border-color: $button-secondary-background-color-hover
+				color: $button-secondary-background-color-hover
+				box-shadow: none
+
+			&[disabled]
+				&:focus,
+				&:hover
+					border-color: inherit
+					color: $button-background-color
+
+		&.button--clear
+			background-color: transparent
+			border-color: transparent
+			color: $button-secondary-background-color
+
+			&:focus,
+			&:hover
+				background-color: transparent
+				border-color: transparent
+				color: $button-secondary-background-color-hover
+
+			&[disabled]
+				&:focus,
+				&:hover
+					color: $button-secondary-background-color
+
+.buttons > *:not(:last-child)
+	margin-right: 0.75rem
+
+.icon
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	height: 16px
+	width: 16px
+	&.right
+		margin-left: 5px
+	&.left
+		margin-right: 5px
