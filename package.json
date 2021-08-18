@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server",
+    "start": "live-server & npm run watch",
+    "dev": "live-server",
     "watch": "node-sass -w sass/main.sass css/main.css"
   },
   "author": "Bani",
